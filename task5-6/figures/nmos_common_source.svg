@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+  <style>
+    .wire { stroke:#111; stroke-width:2; fill:none; }
+    .wire2 { stroke:#111; stroke-width:2.5; fill:none; }
+    .box { stroke:#111; stroke-width:1.5; fill:#fff; }
+    .label { font:15px sans-serif; fill:#111; }
+    .small { font:13px sans-serif; fill:#333; }
+    .node { fill:#111; }
+  </style>
+
+  <!-- VDD rail -->
+  <line class="wire" x1="360" y1="65" x2="520" y2="65"/>
+  <text class="label" x="90" y="52">VDD = +5 V</text>
+  <line class="wire" x1="160" y1="65" x2="360" y2="65"/>
+
+  <!-- input source -->
+  <line class="wire" x1="30" y1="155" x2="65" y2="155"/>
+  <circle class="box" cx="95" cy="155" r="30"/>
+  <path class="wire" d="M81 155 Q89 143 97 155 T113 155"/>
+  <line class="wire" x1="125" y1="155" x2="185" y2="155"/>
+  <text class="small" x="37" y="132">Vi</text>
+  <text class="small" x="30" y="125">10 mV / 1 kHz</text>
+
+  <!-- Cb1 series coupling capacitor -->
+  <line class="wire" x1="185" y1="155" x2="215" y2="155"/>
+  <line class="wire" x1="215" y1="135" x2="215" y2="175"/>
+  <line class="wire" x1="245" y1="135" x2="245" y2="175"/>
+  <line class="wire" x1="245" y1="155" x2="290" y2="155"/>
+  <text class="small" x="195" y="121">Cb1 = 1 uF</text>
+
+  <!-- gate node / divider -->
+  <circle class="node" cx="330" cy="155" r="5"/>
+  <text class="label" x="338" y="146">G</text>
+  <line class="wire" x1="290" y1="155" x2="330" y2="155"/>
+  <line class="wire" x1="330" y1="65" x2="330" y2="90"/>
+  <polyline class="wire" points="330,90 312,107 348,135 330,152"/>
+  <line class="wire" x1="330" y1="65" x2="330" y2="90"/>
+  <text class="label" x="348" y="105">Rg1 = 60 k</text>
+
+  <!-- Rg2 to ground -->
+  <line class="wire" x1="330" y1="155" x2="330" y2="180"/>
+  <polyline class="wire" points="330,180 348,197 312,231 348,265 330,282"/>
+  <line class="wire" x1="330" y1="282" x2="330" y2="330"/>
+  <line class="wire" x1="298" y1="330" x2="362" y2="330"/>
+  <line class="wire" x1="312" y1="340" x2="348" y2="340"/>
+  <line class="wire" x1="324" y1="350" x2="336" y2="350"/>
+  <text class="label" x="352" y="260">Rg2 = 40 k</text>
+
+  <!-- gate to MOSFET gate terminal -->
+  <line class="wire" x1="330" y1="155" x2="440" y2="155"/>
+  <line class="wire2" x1="440" y1="155" x2="440" y2="320"/>
+
+  <!-- Rd -->
+  <line class="wire" x1="500" y1="65" x2="500" y2="90"/>
+  <polyline class="wire" points="500,90 482,107 518,135 482,163 500,180"/>
+  <line class="wire" x1="500" y1="180" x2="500" y2="210"/>
+  <text class="label" x="518" y="118">Rd = 2 k</text>
+
+  <!-- drain node -->
+  <circle class="node" cx="500" cy="210" r="5"/>
+  <text class="label" x="510" y="200">D</text>
+  <text class="small" x="515" y="220">Vout</text>
+
+  <!-- NMOS channel -->
+  <line class="wire2" x1="500" y1="210" x2="500" y2="320"/>
+  <line class="wire2" x1="470" y1="225" x2="530" y2="225"/>
+  <line class="wire2" x1="470" y1="250" x2="530" y2="250"/>
+  <line class="wire2" x1="470" y1="225" x2="470" y2="250"/>
+  <line class="wire2" x1="530" y1="225" x2="530" y2="250"/>
+  <text class="label" x="545" y="270">NMOS</text>
+  <text class="small" x="545" y="288">K=0.8 mA/V2</text>
+  <text class="small" x="545" y="304">Vth=1 V, lambda=0.02</text>
+
+  <!-- source and body to ground -->
+  <line class="wire" x1="500" y1="320" x2="500" y2="360"/>
+  <line class="wire" x1="468" y1="360" x2="532" y2="360"/>
+  <line class="wire" x1="482" y1="370" x2="518" y2="370"/>
+  <line class="wire" x1="494" y1="380" x2="506" y2="380"/>
+  <text class="small" x="475" y="401">S (GND)</text>
+
+  <text class="small" x="60" y="245">Cb1 blocks DC from Vi and couples the 1 kHz signal;</text>
+  <text class="small" x="60" y="265">output is taken from the drain.</text>
+</svg>

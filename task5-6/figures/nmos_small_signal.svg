@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="340" viewBox="0 0 820 340">
+  <style>
+    .wire { stroke:#111; stroke-width:2; fill:none; }
+    .box { stroke:#111; stroke-width:1.5; fill:#fff; }
+    .label { font:15px sans-serif; fill:#111; }
+    .small { font:13px sans-serif; fill:#333; }
+    .node { fill:#111; }
+  </style>
+
+  <!-- input -->
+  <line class="wire" x1="40" y1="105" x2="140" y2="105"/>
+  <circle class="box" cx="80" cy="105" r="22"/>
+  <path class="wire" d="M70 105 Q75 97 81 105 T92 105"/>
+  <text class="small" x="48" y="80">vi</text>
+  <text class="small" x="27" y="145">Cb1 = short at 1 kHz</text>
+  <line class="wire" x1="140" y1="105" x2="190" y2="105"/>
+
+  <!-- gate-source input, vgs arrow -->
+  <line class="wire" x1="190" y1="105" x2="260" y2="105"/>
+  <line class="wire" x1="260" y1="105" x2="260" y2="240"/>
+  <text class="label" x="272" y="145">vgs</text>
+  <line class="wire" x1="260" y1="240" x2="620" y2="240"/>
+  <text class="small" x="272" y="265">source is AC ground</text>
+
+  <!-- current source -->
+  <circle class="box" cx="380" cy="170" r="30"/>
+  <line class="wire" x1="380" y1="105" x2="380" y2="140"/>
+  <line class="wire" x1="380" y1="200" x2="380" y2="240"/>
+  <text class="label" x="322" y="180">gm*vgs</text>
+
+  <!-- ro -->
+  <line class="wire" x1="470" y1="105" x2="470" y2="130"/>
+  <polyline class="wire" points="470,130 452,147 488,181 452,215 470,232"/>
+  <line class="wire" x1="470" y1="232" x2="470" y2="240"/>
+  <text class="label" x="490" y="185">ro</text>
+
+  <!-- drain node -->
+  <circle class="node" cx="590" cy="105" r="5"/>
+  <text class="label" x="598" y="99">D</text>
+  <line class="wire" x1="380" y1="105" x2="590" y2="105"/>
+  <line class="wire" x1="470" y1="105" x2="590" y2="105"/>
+
+  <!-- Rd from VDD AC ground to drain -->
+  <line class="wire" x1="590" y1="105" x2="590" y2="70"/>
+  <line class="wire" x1="590" y1="35" x2="590" y2="70"/>
+  <polyline class="wire" points="590,70 572,53 608,35 590,18"/>
+  <line class="wire" x1="560" y1="35" x2="620" y2="35"/>
+  <line class="wire" x1="572" y1="25" x2="608" y2="25"/>
+  <line class="wire" x1="584" y1="15" x2="596" y2="15"/>
+  <text class="label" x="610" y="68">Rd = 2 k</text>
+  <text class="small" x="610" y="85">VDD AC ground</text>
+
+  <!-- output -->
+  <line class="wire" x1="590" y1="105" x2="690" y2="105"/>
+  <circle class="box" cx="720" cy="105" r="10"/>
+  <text class="label" x="700" y="85">vo</text>
+
+  <text class="label" x="340" y="310">Av = -gm*(Rd || ro) = -3.30 V/V</text>
+</svg>

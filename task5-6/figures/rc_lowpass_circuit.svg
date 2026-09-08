@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="320" viewBox="0 0 820 320">
+  <style>
+    .wire { stroke:#111; stroke-width:2; fill:none; }
+    .box { stroke:#111; stroke-width:1.5; fill:#fff; }
+    .label { font:15px sans-serif; fill:#111; }
+    .small { font:13px sans-serif; fill:#333; }
+    .dash { stroke:#777; stroke-width:1.5; stroke-dasharray:6 5; fill:none; }
+  </style>
+
+  <!-- input source -->
+  <line class="wire" x1="35" y1="120" x2="70" y2="120"/>
+  <circle class="box" cx="100" cy="120" r="30"/>
+  <path class="wire" d="M86 120 Q94 108 102 120 T118 120" />
+  <text class="label" x="55" y="97">Vi</text>
+  <line class="wire" x1="130" y1="120" x2="180" y2="120"/>
+  <text class="small" x="55" y="176">1 kHz square</text>
+
+  <!-- resistor R -->
+  <line class="wire" x1="180" y1="120" x2="240" y2="120"/>
+  <polyline class="wire" points="240,120 258,105 292,135 326,105 360,135 380,120"/>
+  <line class="wire" x1="380" y1="120" x2="450" y2="120"/>
+  <text class="label" x="265" y="82">R1 = 1 kOhm</text>
+
+  <!-- capacitor C -->
+  <line class="wire" x1="450" y1="120" x2="475" y2="120"/>
+  <line class="wire" x1="475" y1="90" x2="475" y2="180"/>
+  <line class="wire" x1="505" y1="90" x2="505" y2="180"/>
+  <line class="wire" x1="490" y1="120" x2="560" y2="120"/>
+  <text class="label" x="455" y="70">C1 = 100 nF</text>
+
+  <!-- output -->
+  <line class="wire" x1="560" y1="120" x2="610" y2="120"/>
+  <circle class="box" cx="640" cy="120" r="10"/>
+  <text class="label" x="625" y="100">Vout</text>
+
+  <!-- ground under capacitor -->
+  <line class="wire" x1="490" y1="180" x2="490" y2="235"/>
+  <line class="wire" x1="458" y1="235" x2="522" y2="235"/>
+  <line class="wire" x1="472" y1="245" x2="508" y2="245"/>
+  <line class="wire" x1="484" y1="255" x2="496" y2="255"/>
+  <text class="small" x="528" y="238">GND</text>
+
+  <!-- node dots -->
+  <circle cx="450" cy="120" r="4" fill="#111"/>
+  <text class="label" x="455" y="205">tau = RC = 100 us</text>
+  <text class="label" x="455" y="225">fc = 1/(2*pi*RC) = 1.59 kHz</text>
+  <text class="small" x="455" y="250">output node taken at capacitor top plate</text>
+</svg>
