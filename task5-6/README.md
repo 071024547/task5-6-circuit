@@ -364,7 +364,7 @@ NMOS 脚本把 KP 设为 2*K，是因为 SPICE 的 Level-1 电流公式里有一
 ### 6.6 其他提交字段
 
 ```text
-GitHub 仓库链接：https://github.com/071024547/fuzzy-spork
+GitHub 仓库链接：https://github.com/071024547/task5-6-circuit
 个人网站网址：https://071024547.github.io/fuzzy-spork/
 姓名：郑慕馨
 专业/兴趣/联系方式：微电子科学与工程 / 数字IC、学科竞赛、考研 / 19727595046
